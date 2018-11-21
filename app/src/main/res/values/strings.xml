@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Gaddi</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">HOME</string>
+    <string name="car">Car</string>
+    <string name="fivettruck">5T Truck</string>
+    <string name="_10t_truck">10T TRUCK</string>
+    <string name="driver">Driver: </string>
+    <string name="driver_s_name">Driver\'s Name</string>
+    <string name="reg_no">Reg No:</string>
+    <string name="registration_no">Registration No</string>
+    <string name="start_time">Start Time</string>
+    <string name="first_break">First Break</string>
+    <string name="second_break">Second Break</string>
+    <string name="save_log_entry">Save Log Entry</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="end_time">End Time</string>
+    <string name="show_log_entries">SHOW LOG ENTRIES</string>
+</resources>
