@@ -15,11 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class CarFragment extends Fragment {
-
+public class FiveTFragment extends Fragment {
 
     Button mbtn_StartTime;
     Button mbtn_1stbreak;
@@ -44,41 +40,38 @@ public class CarFragment extends Fragment {
     String secondbreak;
     String endtime;
 
-    public CarFragment() {
+
+    public FiveTFragment() {
         // Required empty public constructor
     }
 
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        final ShowFragment showFragment=new ShowFragment();
+        final ShowFragment_5tTruck showFragment_5tTruck=new ShowFragment_5tTruck();
+        final CarFragment carFragment=new CarFragment();
         final HomeFragment homeFragment=new HomeFragment();
-        final FiveTFragment fiveTFragment=new FiveTFragment();
         final TenTFragment tenTFragment=new TenTFragment();
 
 
-
-
         // Inflate the layout for this fragment
-        final View rootview= inflater.inflate(R.layout.fragment_car, container, false);
-        mbtn_StartTime=rootview.findViewById(R.id.btn_starttime_car);
-        mbtn_1stbreak=rootview.findViewById(R.id.btn_1break_car);
-        mbtn_2ndbreak=rootview.findViewById(R.id.btn_2break_car);
-        mbtn_EndTime=rootview.findViewById(R.id.btn_endtime_car);
-        mbtn_savelog=rootview.findViewById(R.id.btn_savelogentry_car);
-        mbtn_showlog=rootview.findViewById(R.id.btn_showlogentry_car);
-        mbtn_previous=rootview.findViewById(R.id.btn_previous_car);
-        mbtn_next=rootview.findViewById(R.id.btn_next_car);
-        mbtn_home=rootview.findViewById(R.id.btn_home_car);
-        mStartTime=rootview.findViewById(R.id.txtView_starttime_car);
-        m1stBreak=rootview.findViewById(R.id.txtView_1stbreak_car);
-        m2ndBreak=rootview.findViewById(R.id.txtView_2ndbreak_car);
-        mEndTime=rootview.findViewById(R.id.txtView_endtime_car);
-        mDrivernname=rootview.findViewById(R.id.drivername_car);
-        mRegno=rootview.findViewById(R.id.regno_car);
-
+        View rootview= inflater.inflate(R.layout.fragment_five_t, container, false);
+        mbtn_StartTime=rootview.findViewById(R.id.btn_starttime_5ttruck);
+        mbtn_1stbreak=rootview.findViewById(R.id.btn_1break_5ttruck);
+        mbtn_2ndbreak=rootview.findViewById(R.id.btn_2break_5ttruck);
+        mbtn_EndTime=rootview.findViewById(R.id.btn_endtime_5ttruck);
+        mbtn_savelog=rootview.findViewById(R.id.btn_savelogentry_5ttruck);
+        mbtn_showlog=rootview.findViewById(R.id.btn_showlogentry_5ttruck);
+        mbtn_previous=rootview.findViewById(R.id.btn_previous_5ttruck);
+        mbtn_next=rootview.findViewById(R.id.btn_next_5ttruck);
+        mbtn_home=rootview.findViewById(R.id.btn_home_5ttruck);
+        mStartTime=rootview.findViewById(R.id.txtView_starttime_5ttruck);
+        m1stBreak=rootview.findViewById(R.id.txtView_1stbreak_5ttruck);
+        m2ndBreak=rootview.findViewById(R.id.txtView_2ndbreak_5ttruck);
+        mEndTime=rootview.findViewById(R.id.txtView_endtime_5ttruck);
+        mDrivernname=rootview.findViewById(R.id.drivername_5ttruck);
+        mRegno=rootview.findViewById(R.id.regno_5ttruck);
         mbtn_StartTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,14 +123,15 @@ public class CarFragment extends Fragment {
                 //inseting into database
                 if(DriverName!=""&& Regnumber!=""&&starttime!=""&&firstbreak!=""&endtime!="" )
                 {
-                    Logs logs = new Logs();
-                    logs.setMdrivername(DriverName);
-                    logs.setMregno(Regnumber);
-                    logs.setMstartime(starttime);
-                    logs.setM1stbreak(firstbreak);
-                    logs.setM2ndbreak(secondbreak);
-                    logs.setMendtime(endtime);
-                    MainActivity.logsDatabase.logsDao().insert(logs);
+                    //Logs logs = new Logs();
+                    TruckLogs truckLogs=new TruckLogs();
+                    truckLogs.setMdrivername(DriverName);
+                    truckLogs.setMregno(Regnumber);
+                    truckLogs.setMstartime(starttime);
+                    truckLogs.setM1stbreak(firstbreak);
+                    truckLogs.setM2ndbreak(secondbreak);
+                    truckLogs.setMendtime(endtime);
+                    MainActivity.truckLogsDatabase.truckLogsDao().insert(truckLogs);
                     Toast.makeText(getActivity(),"Saved",Toast.LENGTH_SHORT).show();
                 }
                 else
@@ -166,8 +160,8 @@ public class CarFragment extends Fragment {
             public void onClick(View v) {
                 android.support.v4.app.FragmentManager fragmentManager0 = getActivity().getSupportFragmentManager();
                 fragmentManager0.beginTransaction()
-                        .replace(R.id.frame_layout,showFragment)
-                        .addToBackStack("a")
+                        .addToBackStack("b")
+                        .replace(R.id.frame_layout,showFragment_5tTruck)
                         .commit();
             }
         });
@@ -177,8 +171,8 @@ public class CarFragment extends Fragment {
             public void onClick(View v) {
                 android.support.v4.app.FragmentManager fragmentManager0 = getActivity().getSupportFragmentManager();
                 fragmentManager0.beginTransaction()
+                        .addToBackStack("b")
                         .replace(R.id.frame_layout,homeFragment)
-                        .addToBackStack("a")
                         .commit();
 
             }
@@ -188,20 +182,19 @@ public class CarFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 android.support.v4.app.FragmentManager fragmentManager0 = getActivity().getSupportFragmentManager();
-                        fragmentManager0.beginTransaction()
-                                .replace(R.id.frame_layout,fiveTFragment)
-                                .commit();
-
+                fragmentManager0.beginTransaction()
+                        .replace(R.id.frame_layout,tenTFragment)
+                        .commit();
             }
         });
         mbtn_previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 android.support.v4.app.FragmentManager fragmentManager0 = getActivity().getSupportFragmentManager();
-                        fragmentManager0.beginTransaction()
-                                .replace(R.id.frame_layout,tenTFragment)
-                                .commit();
-                        }
+                fragmentManager0.beginTransaction()
+                        .replace(R.id.frame_layout,carFragment)
+                        .commit();
+            }
         });
         return rootview;
     }

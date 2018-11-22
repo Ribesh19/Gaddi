@@ -1,6 +1,5 @@
 package com.example.ribeshmaharjan.gaddi;
 
-
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -9,14 +8,13 @@ import android.arch.persistence.room.Query;
 import java.util.List;
 
 @Dao
-public interface LogsDao {
-
+public interface TenTruckLogsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Logs logs);
+    void insert(TenTruckLogs tenTruckLogs);
 
-    @Query("Select * from Logs")
-    public List<Logs> read();
+    @Query("Select * from TenTruckLogs")
+    public List<TenTruckLogs> read();
 
-    @Query("Delete from Logs")
+    @Query("Delete from TenTruckLogs")
     void deleteall();
 }

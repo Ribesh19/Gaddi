@@ -29,16 +29,18 @@ android:background="#fff">
 
 <EditText
     android:id="@+id/drivername_car"
-    android:layout_width="wrap_content"
+    android:layout_width="300dp"
     android:layout_height="40dp"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="8dp"
     android:hint="@string/driver_s_name"
     android:inputType="text"
+
     app:layout_constraintBottom_toBottomOf="@+id/textView3"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/textView3"
     app:layout_constraintTop_toTopOf="@+id/textView3" />
+
 
 <TextView
     android:id="@+id/regno"
@@ -52,7 +54,7 @@ android:background="#fff">
 
 <EditText
     android:id="@+id/regno_car"
-    android:layout_width="wrap_content"
+    android:layout_width="300dp"
     android:layout_height="40dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
@@ -63,6 +65,8 @@ android:background="#fff">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/regno"
     app:layout_constraintTop_toTopOf="@+id/regno" />
+
+
 
 <Button
     android:id="@+id/btn_starttime_car"
