@@ -1,14 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TenTFragment">
+    tools:context=".CarFragment"
+    android:background="#fff">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/_10t_truck"
+        android:textColor="#ae52d4"
+        android:textSize="30sp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/driver"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/drivername_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/driver_s_name"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/regno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/reg_no"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/regno_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/registration_no"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/regno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/regno"
+        app:layout_constraintTop_toTopOf="@+id/regno" />
+
+    <Button
+        android:id="@+id/btn_starttime_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/start_time"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regno"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <TextView
+        android:id="@+id/txtView_starttime_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_starttime_10ttruck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_starttime_10ttruck" />
+
+    <Button
+        android:id="@+id/btn_1break_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#b9b90c"
+        android:text="@string/first_break"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_starttime_10ttruck"
+        app:layout_constraintTop_toBottomOf="@+id/btn_starttime_10ttruck"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <TextView
+        android:id="@+id/txtView_1stbreak_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#b9b90c"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_1break_10ttruck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_starttime_10ttruck"
+        />
+
+    <Button
+        android:id="@+id/btn_2break_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#b9b90c"
+        android:text="@string/second_break"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_1break_10ttruck"
+        app:layout_constraintTop_toBottomOf="@+id/btn_1break_10ttruck"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <TextView
+        android:id="@+id/txtView_2ndbreak_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textColor="#b9b90c"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_2break_10ttruck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_2break_10ttruck" />
+
+    <Button
+        android:id="@+id/btn_endtime_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#b5000f"
+        android:text="@string/end_time"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_2break_10ttruck"
+        app:layout_constraintTop_toBottomOf="@+id/btn_2break_10ttruck"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <TextView
+        android:id="@+id/txtView_endtime_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textColor="#b5000f"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_endtime_10ttruck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_endtime_10ttruck" />
+
+    <Button
+        android:id="@+id/btn_next_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#63efe6"
+        android:text="@string/next"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_home_10ttruck"
+        app:layout_constraintStart_toEndOf="@+id/btn_previous_10ttruck"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:id="@+id/btn_previous_10ttruck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="#bcef89"
+        android:text="@string/previous"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_next_10ttruck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_next_10ttruck"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:id="@+id/btn_home_10ttruck"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="#b9009e"
+        android:text="@string/home"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_next_10ttruck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_next_10ttruck"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:id="@+id/btn_savelogentry_10ttruck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#ef7fff"
+        android:text="@string/save_log_entry"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_showlogentry_10ttruck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:id="@+id/btn_showlogentry_10ttruck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="#ef7533"
+        android:text="@string/show_log_entries"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next_10ttruck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"/>
+
+</android.support.constraint.ConstraintLayout>

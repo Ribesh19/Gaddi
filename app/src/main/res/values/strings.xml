@@ -18,4 +18,14 @@
     <string name="previous">Previous</string>
     <string name="end_time">End Time</string>
     <string name="show_log_entries">SHOW LOG ENTRIES</string>
+    <string name="send">SEND</string>
+    <string name="save">SAVE</string>
+    <string name="profile">PROFILE</string>
+    <string name="full_name">Full name</string>
+    <string name="loggername">Logger Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="save_profile">SAVE PROFILE</string>
+    <string name="cancle_profile">CANCLE PROFILE</string>
+    <string name="_5t_truck">5T TRUCK</string>
 </resources>
